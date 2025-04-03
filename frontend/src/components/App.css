@@ -1,0 +1,202 @@
+body {
+  background-image: url("/Users/djpeterpiper/Desktop/INTUNE/frontend/src/assets/images/intuneBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* border: 2px green solid; */
+}
+
+.logoWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  /* border: 2px green solid; */
+}
+
+.intuneLogo {
+  width: 250px;
+  /* border: 1px blue solid; */
+}
+.searchbox {
+  width: 100%;
+  /* border: 1px red solid; */
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbox input {
+  width: 570px;
+  height: 30px;
+  font-size: 20px;
+  padding: 2px;
+  /* border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+  border-radius: 10px;
+  margin-right: 10px;
+  /* border: 2px green solid; */
+}
+
+.searchbox button {
+  height: 35px;
+  width: 80px;
+  border-radius: 20px;
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
+  margin-top: 2px;
+
+  background-color: rgb(208, 130, 128);
+
+  font-size: 17px;
+ font-weight: bold;
+  font-family: "Poppins", sans-serif;
+
+  color: white;
+  /* border: 2px white  solid; */
+}
+
+.searchbox label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+  /* border: 2px blue  solid; */
+}
+.searchbox span {
+  /* padding-top: 8px; */
+
+
+  margin-right: 10px;
+
+  letter-spacing: 0.05em;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+font-size: 25px;
+  /* border: 2px yellow solid; */
+
+  height: 30px;
+}
+
+/* BOX COMPONENT*/
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 730px;
+  height: 200px;
+margin-left: -200px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: white;
+  background-image: url("/Users/djpeterpiper/Desktop/INTUNE/frontend/src/assets/images/backgroundBox1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  border-radius: 10px;
+  box-shadow: 0.2em 0.2em 0.5em;
+  filter: drop-shadow(0.2em 0.2em);
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* border: red 2px solid; */
+}
+
+.box p {
+  /* width: 500px; */
+  /* height: 10px; */
+  /* margin-left: 40px; */
+  /* border: red 2px solid; */
+}
+
+.box img {
+  width: 200px;
+  height: 201px;
+  margin-left: -80px;
+  margin-top: 2px;
+  /* border-top-left-radius: 10px; */
+  /* border-bottom-left-radius:10px;
+border: red 2px solid; */
+}
+
+.innerBox {
+  width: 180px;
+  height: 200px;
+  margin-left: 15px;
+  /* border-radius: 30px; */
+padding-left: 8px;
+  font-size: 18px;
+background-color: rgba(211, 211, 211, 0.5);
+
+}
+
+.innerBox p {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  /* border: 1px solid red; */
+  opacity: 0.9;
+}
+
+.name {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 30px;
+  line-height: 1em;
+  text-shadow: 1px 1px 2px lightgray, 0 0 3em white, 0 0 3em;
+  z-index: 5;
+}
+.song {
+  text-shadow: 1px 1px 2px lightgray, 0 0 3em white, 0 0 3em;
+  margin-top: -40px;
+  z-index: 5;
+}
+
+
+
+.addPlaylist{
+display: flex;
+/* flex-direction: column; */
+justify-content: center;
+align-content: center;
+/* border: 1px red solid; */
+width: 100px;
+height: 150px;
+margin-left: 70px;
+margin-top: 20px;
+padding: 15px;
+
+}
+
+.addPlaylist p{
+font-family: "Poppins", sans-serif;
+  font-weight: bold;
+font-size: 22px;
+ text-shadow: 1px 1px 2px lightgray, 0 0 3em white, 0 0 3em;
+margin-left: 10px;
+}
+.addButton img{
+width:60px;
+height: auto;
+opacity: 100;
+margin-left: 18px;
+margin-top: 25px;
+border-radius: 15px;
+ box-shadow: 5px 7px 1px 4px rgba(50, 1, 83, 0.8);
+            cursor: pointer;
+            outline: black 3px solid;
+            transition: 0.2s all;
+}
+
+.addButton img:active{
+ 
+            transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+    
+}
+
