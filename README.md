@@ -1,6 +1,6 @@
 # 🎶 Intune
 
-## 📌 Description
+## 📌 Product Description
 Intune is a web application that enables users to search for music artists, view their top tracks, and add favorite songs to personalized playlists saved to their account.
 
 ## 🚀 Key Features
@@ -54,18 +54,9 @@ http://localhost:3000
 - **Explore:** View the top tracks of the searched artist, each displayed in a stylized box.
 - **Playlist:** Once logged in, click the icon/button on any song to add it to your playlist (feature in development).
 
-## 📈 Current Status
-🚧 **Work in Progress**
+## 📸 Screenshot
+![Search Results Screenshot](frontend/src/assets/screenshots/screenshot1.png)
 
-## 🔮 Next Steps & Planned Improvements
-- Implementation of login and OAuth authentication.
-- Complete playlist functionality with persistent storage linked to user accounts.
+![Playlist Feature Screenshot](frontend/src/assets/screenshots/screenshot2.png)
 
-## 👨‍💻 Author
-**Peter Toussaint**
-- [GitHub Profile](https://github.com/Peter2oussaint)
-
----
-
-🌟 Thank you for exploring Intune!
 
