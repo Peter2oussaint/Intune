@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "webpack serve --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production",
+    "test": "jest"
   },
+  "proxy": "http://localhost:4000",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "webpack": "^5.97.0"
+    "react-router-dom": "^6.30.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -19,11 +25,13 @@
     "@babel/preset-react": "^7.26.3",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
+    "webpack": "^5.102.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.2.2"
   },
   "description": ""
 }
