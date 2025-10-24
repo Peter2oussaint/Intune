@@ -1,15 +1,67 @@
-const  express = require('express');
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+
 const app = express();
- require('dotenv').config();
+const pool = require("./db");
 
+// CORS 
+app.use(cors());
 
-
+// Body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use((req,res,next)=> {console.log(req.path,req.method); next()})
+// Routes
+const spotifyRoutes = require("./routes/spotify");
+const playlistsRoutes = require("./routes/playlists");
+app.use("/api/spotify", spotifyRoutes);
+app.use("/api/playlists", playlistsRoutes);
+app.use("/api/users", require("./routes/users"));
 
- app.get("/",(req,res)=>res.json("Hi Sucka"))
-app.listen(process.env.PORT, () => {
-  console.log('Server listening on port',process.env.PORT );
-}); 
+// Health check
+app.get("/health", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ ok: true, db_time: result.rows[0].now });
+  } catch (err) {
+    res.status(500).json({ ok: false, error: "DB connection error" });
+  }
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ error: "Not Found" });
+});
+
+// Central error handler
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+  res.status(500).json({ error: "Internal Server Error" });
+});
+
+module.exports = app;
+
+// Boot when run directly
+if (require.main === module) {
+  const PORT = process.env.PORT || 4000;
+  const server = app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+
+  const shutdown = async (signal) => {
+    console.log(`${signal} received: closing server…`);
+    server.close(async () => {
+      try {
+        await pool.end();
+        console.log("DB pool closed. Bye.");
+      } finally {
+        process.exit(0);
+      }
+    });
+  };
+
+  process.on("SIGINT", () => shutdown("SIGINT"));
+  process.on("SIGTERM", () => shutdown("SIGTERM"));
+}
