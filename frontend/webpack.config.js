@@ -12,6 +12,15 @@ module.exports = {
   plugins: [
     new Dotenv(),
     new HTMLWebpackPlugin({ template: "./public/index.html" }),
+    new webpack.DefinePlugin({
+      "process.env.INTUNE_API_URL": JSON.stringify(process.env.INTUNE_API_URL),
+      "process.env.INTUNE_SUPABASE_URL": JSON.stringify(
+        process.env.INTUNE_SUPABASE_URL
+      ),
+      "process.env.INTUNE_SUPABASE_ANON_KEY": JSON.stringify(
+        process.env.INTUNE_SUPABASE_ANON_KEY
+      ),
+    }),
   ],
   module: {
     rules: [
@@ -38,12 +47,12 @@ module.exports = {
     open: true,
     proxy: [
       {
-        context: ["/api"],          // which requests to proxy
+        context: ["/api"], // which requests to proxy
         target: "http://localhost:4000",
-        secure: false,              // if your backend is HTTPS with self-signed certs
-        changeOrigin: true,         // rewrite the Host header to the target URL
+        secure: false, // if your backend is HTTPS with self-signed certs
+        changeOrigin: true, // rewrite the Host header to the target URL
         // pathRewrite: { "^/api": "" }  // if your backend routes don’t include the /api prefix
-      }
+      },
     ],
   },
 };
