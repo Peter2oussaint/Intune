@@ -4,7 +4,7 @@ const pool = require("../db");
 require("dotenv").config();
 
 // Services
-const ChatGPTCompatibilityService = require("../../backend/services/chatgptCompatibility");
+const ChatGPTCompatibilityService = require("../services/chatgptCompatibility");
 const chatgptService = new ChatGPTCompatibilityService();
 
 const HarmonicCompatibilityEngine = require("../services/harmonicCompatibility");
