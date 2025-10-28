@@ -11,7 +11,6 @@ module.exports = {
     filename: "bundle.js",
   },
   plugins: [
-    new Dotenv(),
     new HTMLWebpackPlugin({ template: "./public/index.html" }),
     new webpack.DefinePlugin({
       "process.env.INTUNE_API_URL": JSON.stringify(process.env.INTUNE_API_URL),
