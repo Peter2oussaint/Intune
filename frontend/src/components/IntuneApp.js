@@ -9,7 +9,7 @@ import TrackArtwork from "./TrackArtwork";
 
 import intuneLogoImage from "../assets/logo/INTUNE.LOGO.png";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
+const API_BASE_URL = process.env.INTUNE_API_URL || "http://localhost:4000";
 
 // Constants for BPM ranges
 const BPM_RANGES = {
